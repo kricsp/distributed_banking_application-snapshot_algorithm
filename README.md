@@ -1,0 +1,1 @@
+# distributed_banking_application-snapshot_algorithm
