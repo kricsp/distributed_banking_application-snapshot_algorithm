@@ -1,11 +1,11 @@
 
-public class ChannelState{
+public class MarkerState{
 
 	public String markerState = "Negative"; 
 	public int incomingBalance;
 	public String name;
 
-	public ChannelState(String nameIn) {
+	public MarkerState(String nameIn) {
 		this.name = nameIn;
 	}
 	

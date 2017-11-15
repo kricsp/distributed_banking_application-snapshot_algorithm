@@ -22,7 +22,7 @@ public class Branch{
 		Snapshot sc = new Snapshot(id);
 		for (String br : bc.socket.keySet()) {
 	//		System.out.println("creating channel " +br);
-			ChannelState bc1 = new ChannelState(br);
+			MarkerState bc1 = new MarkerState(br);
 			sc.channels.put(br, bc1);
 		}
 		snapshotList.put(id, sc);
@@ -90,7 +90,7 @@ public class Branch{
 			Snapshot sc = new Snapshot(id);
 			for (String br : bc.socket.keySet()) {
 		//		System.out.println("creating channel " + br);
-				ChannelState bc1 = new ChannelState(br);
+				MarkerState bc1 = new MarkerState(br);
 				sc.channels.put(br, bc1);
 			}
 			snapshotList.put(id, sc);

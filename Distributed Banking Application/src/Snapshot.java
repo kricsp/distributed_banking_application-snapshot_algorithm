@@ -4,8 +4,8 @@ import java.util.TreeMap;
 
 public class Snapshot {
 	
-	HashMap<String,ChannelState> channels = new HashMap<String,ChannelState>();
-	Map<String, ChannelState> treeMap = null;
+	HashMap<String,MarkerState> channels = new HashMap<String,MarkerState>();
+	Map<String, MarkerState> treeMap = null;
 	
 	public int initialBalance;
 	public int id;
@@ -44,7 +44,7 @@ public class Snapshot {
 	}
 	
 	public synchronized int checkStatus(){
-		treeMap = new TreeMap<String, ChannelState>(channels);
+		treeMap = new TreeMap<String, MarkerState>(channels);
 		
 		for (String br : channels.keySet()) {
 				if(channels.get(br).getChannelState().compareToIgnoreCase("final") != 0) {
