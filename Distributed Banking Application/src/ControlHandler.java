@@ -3,6 +3,13 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.Socket;
 
+/**
+* 
+*
+* @author  Surendrakumar Koneti
+* @since   2017-11-16
+*/
+
 public class ControlHandler implements Runnable{
 	
 	Socket socket = null;
@@ -10,7 +17,6 @@ public class ControlHandler implements Runnable{
 	String name;
 	
 	public ControlHandler(Socket sock, Branch bcin, String in) {
-	//	System.out.println("Control handler started");	
 		this.socket = sock;
 		this.bobj = bcin;
 		this.name = in;
@@ -31,7 +37,6 @@ public class ControlHandler implements Runnable{
 					if(incoming.hasRetrieveSnapshot()) {
 						int id = incoming.getRetrieveSnapshot().getSnapshotId();
 						
-					//	System.out.println("Retreiving sanpshot " + id);
 						if(Branch.snapshotList.containsKey(id)) {
 							if(Branch.snapshotList.get(id).checkStatus() == 1) {
 								int balance = Branch.snapshotList.get(id).getBalance();
@@ -48,7 +53,6 @@ public class ControlHandler implements Runnable{
 								rr.setLocalSnapshot(ls.build());
 								brmessage.setReturnSnapshot(rr.build());
 								OutputStream output = socket.getOutputStream();
-						//		System.out.println("Return Message");
 							    brmessage.build().writeDelimitedTo(output);
 							    output.flush();
 							}

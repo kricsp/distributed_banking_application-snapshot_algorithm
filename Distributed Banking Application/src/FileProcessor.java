@@ -1,9 +1,14 @@
-//package DBA;
-
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.FileNotFoundException;
 import java.io.BufferedReader;
+
+/**
+* 
+*
+* @author  Surendrakumar Koneti
+* @since   2017-11-16
+*/
 
 public class FileProcessor{
 
@@ -24,7 +29,8 @@ public class FileProcessor{
 	}
 
 	/**
- 	*@string
+	* Reads target file and returns line by line
+ 	* @return line	
 	*/
 
 	public String readLine(){
@@ -43,5 +49,19 @@ public class FileProcessor{
 		}
 		return null;
 	}
+
+    	/**
+     	* Closes target file
+     	*/
+
+    	public void close() {
+			try{
+        	    		fileRead.close();
+			}
+			catch(IOException i){
+				System.err.println("close failed");
+           		 System.exit(0); 
+			}
+    	}
 }
 	

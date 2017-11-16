@@ -7,6 +7,13 @@ import java.io.OutputStream;
 import java.net.Socket;
 import java.net.UnknownHostException;
 
+/**
+* 
+*
+* @author  Surendrakumar Koneti
+* @since   2017-11-16
+*/
+
 public class BranchContext {
 	
 	private String name = null;

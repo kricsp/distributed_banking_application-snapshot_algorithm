@@ -2,6 +2,13 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TreeMap;
 
+/**
+* 
+*
+* @author  Surendrakumar Koneti
+* @since   2017-11-16
+*/
+
 public class Snapshot {
 	
 	HashMap<String,MarkerState> channels = new HashMap<String,MarkerState>();

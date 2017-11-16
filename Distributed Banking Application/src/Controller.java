@@ -11,6 +11,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+/**
+* 
+*
+* @author  Surendrakumar Koneti
+* @since   2017-11-16
+*/
+
 public class Controller{
 	
 	public static int snapshotId = 0;
@@ -92,28 +99,6 @@ public class Controller{
 			e1.printStackTrace();
 		}
 		
-/*		
-			Bank.BranchMessage.Builder branchMessage1 = Bank.BranchMessage.newBuilder();
-			Bank.InitSnapshot.Builder snapshot = Bank.InitSnapshot.newBuilder() ;
-			snapshot.setSnapshotId(snapshotId);
-			try {
-				Socket send;
-				send = socklist.get(bank.getAllBranches(1).getName());
-		//		send = new Socket(bank.getAllBranches(2).getIp(), bank.getAllBranches(2).getPort());
-				OutputStream out = send.getOutputStream();
-				branchMessage1.setInitSnapshot(snapshot.build());
-				System.out.println("Initiating SnapShot");
-				branchMessage1.build().writeDelimitedTo(out);
-				out.flush();
-				InitiatedSnaps.add(snapshotId);
-				} catch (UnknownHostException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}		
-*/	
 		
 		Thread snap = new Thread(new Runnable() {
 						
@@ -123,7 +108,6 @@ public class Controller{
 							try {
 								Thread.sleep(3000);
 							} catch (InterruptedException e1) {
-								// TODO Auto-generated catch block
 								e1.printStackTrace();
 							}
 							Bank.BranchMessage.Builder branchMessage1 = Bank.BranchMessage.newBuilder();
@@ -134,9 +118,7 @@ public class Controller{
 								List<String> keys = new ArrayList<String>(socklist.keySet());
 								String randomKey = keys.get(rand.nextInt(keys.size()));
 								Socket sock;
-								//System.out.println(randomKey);
 								sock = socklist.get(randomKey);
-							//	send = socklist.get(bank.getAllBranches(1).getName());
 								OutputStream out = sock.getOutputStream();
 								branchMessage1.setInitSnapshot(snapshot.build());
 								System.out.println();
@@ -146,10 +128,8 @@ public class Controller{
 								InitiatedSnaps.add(snapshotId);
 								snapshotId += 1;
 								} catch (UnknownHostException e) {
-									// TODO Auto-generated catch block
 									e.printStackTrace();
 								} catch (IOException e) {
-									// TODO Auto-generated catch block
 									e.printStackTrace();
 								}		
 				}
@@ -164,13 +144,11 @@ public class Controller{
 			try {
 				Thread.sleep(5000);
 			} catch (InterruptedException e1) {
-				// TODO Auto-generated catch block
 				e1.printStackTrace();
 			}
 			System.out.println();
 			Bank.BranchMessage.Builder brMessage = Bank.BranchMessage.newBuilder();
 			Bank.RetrieveSnapshot.Builder retreive = Bank.RetrieveSnapshot.newBuilder();
-			//int temp = getSnapShot;
 			int id = InitiatedSnaps.get(getSnapShot);
 			retreive.setSnapshotId(id);
 			System.out.println("Retreiving SnapShot " + id);
@@ -187,8 +165,6 @@ public class Controller{
 					InputStream in = sock.getInputStream();
 					Bank.BranchMessage incoming = Bank.BranchMessage.parseDelimitedFrom(in);
 					if(incoming != null) {
-						//	System.out.println("Return message received");
-						//	int idNo = incoming.getReturnSnapshot().getLocalSnapshot().getSnapshotId();
 						int bal = incoming.getReturnSnapshot().getLocalSnapshot().getBalance();
 						int ch = incoming.getReturnSnapshot().getLocalSnapshot().getChannelStateCount();
 						System.out.println();
@@ -207,7 +183,6 @@ public class Controller{
 						
 					}
 				} catch (IOException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}			
 			}
@@ -216,7 +191,6 @@ public class Controller{
 				try {
 					Thread.sleep(8000);
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}

@@ -1,3 +1,9 @@
+/**
+* 
+*
+* @author  Surendrakumar Koneti
+* @since   2017-11-16
+*/
 
 public class MarkerState{
 

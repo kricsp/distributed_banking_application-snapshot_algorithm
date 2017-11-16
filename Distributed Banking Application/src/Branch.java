@@ -11,6 +11,13 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 
+/**
+* 
+*
+* @author  Surendrakumar Koneti
+* @since   2017-11-16
+*/
+
 public class Branch{
 	
 	public static Branch brobj = new Branch();
@@ -21,7 +28,6 @@ public class Branch{
 	public synchronized void initSnapshot(int id) {
 		Snapshot sc = new Snapshot(id);
 		for (String br : bc.socket.keySet()) {
-	//		System.out.println("creating channel " +br);
 			MarkerState bc1 = new MarkerState(br);
 			sc.channels.put(br, bc1);
 		}
@@ -42,7 +48,6 @@ public class Branch{
 				branchMessage.build().writeDelimitedTo(output);
 				output.flush();
 			//	System.out.println("Markers Sent");
-			//	System.out.println(sockfd);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
@@ -51,7 +56,6 @@ public class Branch{
 		}
 		
 		for(String temp : sc.channels.keySet()) {
-		//	System.out.println(temp);
 			sc.channels.get(temp).setStartState();
 		}
 		
@@ -62,11 +66,8 @@ public class Branch{
 		if(incoming.hasTransfer()) {
 			int amount = incoming.getTransfer().getMoney();
 			Branch.bc.updateMoney(amount);
-		//	System.out.println("SnapShot size " + Branch.snapshotList.size());
 			if(Branch.snapshotList.size() > 0) {
 			for(Integer sp: Branch.snapshotList.keySet()) {
-			//	System.out.println(Branch.snapshotList.get(sp).getSnapshotId());
-			//	System.out.println(Branch.snapshotList.get(sp).channels.get(name).name);
 				if(Branch.snapshotList.get(sp).channels.get(name).getChannelState().compareToIgnoreCase("initial") == 0){
 					Branch.snapshotList.get(sp).channels.get(name).recordChannel(amount);
 				}
@@ -89,7 +90,6 @@ public class Branch{
 			int id = markerIn;
 			Snapshot sc = new Snapshot(id);
 			for (String br : bc.socket.keySet()) {
-		//		System.out.println("creating channel " + br);
 				MarkerState bc1 = new MarkerState(br);
 				sc.channels.put(br, bc1);
 			}
@@ -217,7 +217,7 @@ public class Branch{
 					DataOutputStream out = new DataOutputStream(socket.getOutputStream());
 					String text = bc.getName()+'\n';
 					bc.socket.put(bc.bank.getAllBranches(i).getName(),socket);
-				//	System.out.println("Connection sent" + text);
+				//	System.out.println("Connection request sent" + text);
 					socket.setKeepAlive(true);
 					bc.decrementConnections();
 					out.writeBytes(text);
@@ -245,24 +245,20 @@ public class Branch{
 					try {
 						System.out.flush();
 						receive = brobj.server.accept();
-						InputStream in = receive.getInputStream();
-				//		System.out.println(bc.getConnections());	
+						InputStream in = receive.getInputStream();	
 						if(bc.getConnections() != 0) {
 							BufferedReader br = new BufferedReader(new InputStreamReader(in));
 							String line = br.readLine();
 							String branch = line.toString();
 							bc.socket.put(branch, receive);
-							//System.out.println("Connection request" + branch);
+							//System.out.println("Connection request received" + branch);
 							bc.decrementConnections();
-				//			System.out.println("decrement" + bc.getConnections());
 							int val = bc.getExConn();
 							t[val] = new Thread(new BranchHandler(receive, brobj, branch));
 							t[val].start();
 							bc.increExConn();
-							if(bc.getConnections() == 0) {
-								System.out.println("Connections Established");
-								System.out.flush();
-							}
+							System.out.flush();
+							
 						}	
 					} catch (IOException e) {
 						e.printStackTrace();

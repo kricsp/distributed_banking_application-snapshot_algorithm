@@ -2,6 +2,13 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.Socket;
 
+/**
+* 
+*
+* @author  Surendrakumar Koneti
+* @since   2017-11-16
+*/
+
 public class BranchHandler implements Runnable{
 	
 	Socket socket = null;
@@ -11,7 +18,6 @@ public class BranchHandler implements Runnable{
 		this.socket = sock;
 		this.bobj = bcin;
 		this.name = in;
-	//	System.out.println(name);
 	}
 	@Override
 	public void run() {
@@ -22,7 +28,6 @@ public class BranchHandler implements Runnable{
 					bobj.handleRequest(incoming, name);
 				}
 			 catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}				
 			}
