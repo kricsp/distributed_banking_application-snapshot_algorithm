@@ -17,7 +17,7 @@ public final class Bank {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 balance = 1;</code>
+     * <code>optional uint32 balance = 1;</code>
      */
     int getBalance();
 
@@ -52,7 +52,6 @@ public final class Bank {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:InitBranch)
       InitBranchOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use InitBranch.newBuilder() to construct.
     private InitBranch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -65,7 +64,7 @@ public final class Bank {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private InitBranch(
         com.google.protobuf.CodedInputStream input,
@@ -73,8 +72,6 @@ public final class Bank {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -84,8 +81,7 @@ public final class Bank {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -115,7 +111,6 @@ public final class Bank {
         if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
           allBranches_ = java.util.Collections.unmodifiableList(allBranches_);
         }
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -136,27 +131,27 @@ public final class Bank {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>string name = 1;</code>
+       * <code>optional string name = 1;</code>
        */
       java.lang.String getName();
       /**
-       * <code>string name = 1;</code>
+       * <code>optional string name = 1;</code>
        */
       com.google.protobuf.ByteString
           getNameBytes();
 
       /**
-       * <code>string ip = 2;</code>
+       * <code>optional string ip = 2;</code>
        */
       java.lang.String getIp();
       /**
-       * <code>string ip = 2;</code>
+       * <code>optional string ip = 2;</code>
        */
       com.google.protobuf.ByteString
           getIpBytes();
 
       /**
-       * <code>uint32 port = 3;</code>
+       * <code>optional uint32 port = 3;</code>
        */
       int getPort();
     }
@@ -167,7 +162,6 @@ public final class Bank {
         com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:InitBranch.Branch)
         BranchOrBuilder {
-    private static final long serialVersionUID = 0L;
       // Use Branch.newBuilder() to construct.
       private Branch(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -181,7 +175,7 @@ public final class Bank {
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
-        return this.unknownFields;
+        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
       }
       private Branch(
           com.google.protobuf.CodedInputStream input,
@@ -189,8 +183,6 @@ public final class Bank {
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
         int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
           boolean done = false;
           while (!done) {
@@ -200,8 +192,7 @@ public final class Bank {
                 done = true;
                 break;
               default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
+                if (!input.skipField(tag)) {
                   done = true;
                 }
                 break;
@@ -231,7 +222,6 @@ public final class Bank {
           throw new com.google.protobuf.InvalidProtocolBufferException(
               e).setUnfinishedMessage(this);
         } finally {
-          this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
         }
       }
@@ -250,7 +240,7 @@ public final class Bank {
       public static final int NAME_FIELD_NUMBER = 1;
       private volatile java.lang.Object name_;
       /**
-       * <code>string name = 1;</code>
+       * <code>optional string name = 1;</code>
        */
       public java.lang.String getName() {
         java.lang.Object ref = name_;
@@ -265,7 +255,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>string name = 1;</code>
+       * <code>optional string name = 1;</code>
        */
       public com.google.protobuf.ByteString
           getNameBytes() {
@@ -284,7 +274,7 @@ public final class Bank {
       public static final int IP_FIELD_NUMBER = 2;
       private volatile java.lang.Object ip_;
       /**
-       * <code>string ip = 2;</code>
+       * <code>optional string ip = 2;</code>
        */
       public java.lang.String getIp() {
         java.lang.Object ref = ip_;
@@ -299,7 +289,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>string ip = 2;</code>
+       * <code>optional string ip = 2;</code>
        */
       public com.google.protobuf.ByteString
           getIpBytes() {
@@ -318,7 +308,7 @@ public final class Bank {
       public static final int PORT_FIELD_NUMBER = 3;
       private int port_;
       /**
-       * <code>uint32 port = 3;</code>
+       * <code>optional uint32 port = 3;</code>
        */
       public int getPort() {
         return port_;
@@ -345,7 +335,6 @@ public final class Bank {
         if (port_ != 0) {
           output.writeUInt32(3, port_);
         }
-        unknownFields.writeTo(output);
       }
 
       public int getSerializedSize() {
@@ -363,11 +352,11 @@ public final class Bank {
           size += com.google.protobuf.CodedOutputStream
             .computeUInt32Size(3, port_);
         }
-        size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
       }
 
+      private static final long serialVersionUID = 0L;
       @java.lang.Override
       public boolean equals(final java.lang.Object obj) {
         if (obj == this) {
@@ -385,7 +374,6 @@ public final class Bank {
             .equals(other.getIp());
         result = result && (getPort()
             == other.getPort());
-        result = result && unknownFields.equals(other.unknownFields);
         return result;
       }
 
@@ -395,7 +383,7 @@ public final class Bank {
           return memoizedHashCode;
         }
         int hash = 41;
-        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (19 * hash) + getDescriptorForType().hashCode();
         hash = (37 * hash) + NAME_FIELD_NUMBER;
         hash = (53 * hash) + getName().hashCode();
         hash = (37 * hash) + IP_FIELD_NUMBER;
@@ -407,17 +395,6 @@ public final class Bank {
         return hash;
       }
 
-      public static Bank.InitBranch.Branch parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static Bank.InitBranch.Branch parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
       public static Bank.InitBranch.Branch parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -571,7 +548,7 @@ public final class Bank {
         }
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            Object value) {
           return (Builder) super.setField(field, value);
         }
         public Builder clearField(
@@ -584,12 +561,12 @@ public final class Bank {
         }
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
+            int index, Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
         public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -614,7 +591,6 @@ public final class Bank {
           if (other.getPort() != 0) {
             setPort(other.getPort());
           }
-          this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
         }
@@ -643,7 +619,7 @@ public final class Bank {
 
         private java.lang.Object name_ = "";
         /**
-         * <code>string name = 1;</code>
+         * <code>optional string name = 1;</code>
          */
         public java.lang.String getName() {
           java.lang.Object ref = name_;
@@ -658,7 +634,7 @@ public final class Bank {
           }
         }
         /**
-         * <code>string name = 1;</code>
+         * <code>optional string name = 1;</code>
          */
         public com.google.protobuf.ByteString
             getNameBytes() {
@@ -674,7 +650,7 @@ public final class Bank {
           }
         }
         /**
-         * <code>string name = 1;</code>
+         * <code>optional string name = 1;</code>
          */
         public Builder setName(
             java.lang.String value) {
@@ -687,7 +663,7 @@ public final class Bank {
           return this;
         }
         /**
-         * <code>string name = 1;</code>
+         * <code>optional string name = 1;</code>
          */
         public Builder clearName() {
           
@@ -696,7 +672,7 @@ public final class Bank {
           return this;
         }
         /**
-         * <code>string name = 1;</code>
+         * <code>optional string name = 1;</code>
          */
         public Builder setNameBytes(
             com.google.protobuf.ByteString value) {
@@ -712,7 +688,7 @@ public final class Bank {
 
         private java.lang.Object ip_ = "";
         /**
-         * <code>string ip = 2;</code>
+         * <code>optional string ip = 2;</code>
          */
         public java.lang.String getIp() {
           java.lang.Object ref = ip_;
@@ -727,7 +703,7 @@ public final class Bank {
           }
         }
         /**
-         * <code>string ip = 2;</code>
+         * <code>optional string ip = 2;</code>
          */
         public com.google.protobuf.ByteString
             getIpBytes() {
@@ -743,7 +719,7 @@ public final class Bank {
           }
         }
         /**
-         * <code>string ip = 2;</code>
+         * <code>optional string ip = 2;</code>
          */
         public Builder setIp(
             java.lang.String value) {
@@ -756,7 +732,7 @@ public final class Bank {
           return this;
         }
         /**
-         * <code>string ip = 2;</code>
+         * <code>optional string ip = 2;</code>
          */
         public Builder clearIp() {
           
@@ -765,7 +741,7 @@ public final class Bank {
           return this;
         }
         /**
-         * <code>string ip = 2;</code>
+         * <code>optional string ip = 2;</code>
          */
         public Builder setIpBytes(
             com.google.protobuf.ByteString value) {
@@ -781,13 +757,13 @@ public final class Bank {
 
         private int port_ ;
         /**
-         * <code>uint32 port = 3;</code>
+         * <code>optional uint32 port = 3;</code>
          */
         public int getPort() {
           return port_;
         }
         /**
-         * <code>uint32 port = 3;</code>
+         * <code>optional uint32 port = 3;</code>
          */
         public Builder setPort(int value) {
           
@@ -796,7 +772,7 @@ public final class Bank {
           return this;
         }
         /**
-         * <code>uint32 port = 3;</code>
+         * <code>optional uint32 port = 3;</code>
          */
         public Builder clearPort() {
           
@@ -806,12 +782,12 @@ public final class Bank {
         }
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return this;
         }
 
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
+          return this;
         }
 
 
@@ -857,7 +833,7 @@ public final class Bank {
     public static final int BALANCE_FIELD_NUMBER = 1;
     private int balance_;
     /**
-     * <code>uint32 balance = 1;</code>
+     * <code>optional uint32 balance = 1;</code>
      */
     public int getBalance() {
       return balance_;
@@ -916,7 +892,6 @@ public final class Bank {
       for (int i = 0; i < allBranches_.size(); i++) {
         output.writeMessage(2, allBranches_.get(i));
       }
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -932,11 +907,11 @@ public final class Bank {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(2, allBranches_.get(i));
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -952,7 +927,6 @@ public final class Bank {
           == other.getBalance());
       result = result && getAllBranchesList()
           .equals(other.getAllBranchesList());
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -962,7 +936,7 @@ public final class Bank {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + BALANCE_FIELD_NUMBER;
       hash = (53 * hash) + getBalance();
       if (getAllBranchesCount() > 0) {
@@ -974,17 +948,6 @@ public final class Bank {
       return hash;
     }
 
-    public static Bank.InitBranch parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static Bank.InitBranch parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static Bank.InitBranch parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1151,7 +1114,7 @@ public final class Bank {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -1164,12 +1127,12 @@ public final class Bank {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1212,7 +1175,6 @@ public final class Bank {
             }
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1242,13 +1204,13 @@ public final class Bank {
 
       private int balance_ ;
       /**
-       * <code>uint32 balance = 1;</code>
+       * <code>optional uint32 balance = 1;</code>
        */
       public int getBalance() {
         return balance_;
       }
       /**
-       * <code>uint32 balance = 1;</code>
+       * <code>optional uint32 balance = 1;</code>
        */
       public Builder setBalance(int value) {
         
@@ -1257,7 +1219,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>uint32 balance = 1;</code>
+       * <code>optional uint32 balance = 1;</code>
        */
       public Builder clearBalance() {
         
@@ -1507,12 +1469,12 @@ public final class Bank {
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -1559,7 +1521,7 @@ public final class Bank {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 money = 1;</code>
+     * <code>optional uint32 money = 1;</code>
      */
     int getMoney();
   }
@@ -1570,7 +1532,6 @@ public final class Bank {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:Transfer)
       TransferOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use Transfer.newBuilder() to construct.
     private Transfer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -1582,7 +1543,7 @@ public final class Bank {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private Transfer(
         com.google.protobuf.CodedInputStream input,
@@ -1590,8 +1551,6 @@ public final class Bank {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -1601,8 +1560,7 @@ public final class Bank {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -1620,7 +1578,6 @@ public final class Bank {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -1639,7 +1596,7 @@ public final class Bank {
     public static final int MONEY_FIELD_NUMBER = 1;
     private int money_;
     /**
-     * <code>uint32 money = 1;</code>
+     * <code>optional uint32 money = 1;</code>
      */
     public int getMoney() {
       return money_;
@@ -1660,7 +1617,6 @@ public final class Bank {
       if (money_ != 0) {
         output.writeUInt32(1, money_);
       }
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -1672,11 +1628,11 @@ public final class Bank {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, money_);
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -1690,7 +1646,6 @@ public final class Bank {
       boolean result = true;
       result = result && (getMoney()
           == other.getMoney());
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -1700,7 +1655,7 @@ public final class Bank {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + MONEY_FIELD_NUMBER;
       hash = (53 * hash) + getMoney();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -1708,17 +1663,6 @@ public final class Bank {
       return hash;
     }
 
-    public static Bank.Transfer parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static Bank.Transfer parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static Bank.Transfer parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -1866,7 +1810,7 @@ public final class Bank {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -1879,12 +1823,12 @@ public final class Bank {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -1901,7 +1845,6 @@ public final class Bank {
         if (other.getMoney() != 0) {
           setMoney(other.getMoney());
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -1930,13 +1873,13 @@ public final class Bank {
 
       private int money_ ;
       /**
-       * <code>uint32 money = 1;</code>
+       * <code>optional uint32 money = 1;</code>
        */
       public int getMoney() {
         return money_;
       }
       /**
-       * <code>uint32 money = 1;</code>
+       * <code>optional uint32 money = 1;</code>
        */
       public Builder setMoney(int value) {
         
@@ -1945,7 +1888,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>uint32 money = 1;</code>
+       * <code>optional uint32 money = 1;</code>
        */
       public Builder clearMoney() {
         
@@ -1955,12 +1898,12 @@ public final class Bank {
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -2007,7 +1950,7 @@ public final class Bank {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 snapshot_id = 1;</code>
+     * <code>optional uint32 snapshot_id = 1;</code>
      */
     int getSnapshotId();
   }
@@ -2018,7 +1961,6 @@ public final class Bank {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:InitSnapshot)
       InitSnapshotOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use InitSnapshot.newBuilder() to construct.
     private InitSnapshot(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2030,7 +1972,7 @@ public final class Bank {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private InitSnapshot(
         com.google.protobuf.CodedInputStream input,
@@ -2038,8 +1980,6 @@ public final class Bank {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -2049,8 +1989,7 @@ public final class Bank {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -2068,7 +2007,6 @@ public final class Bank {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -2087,7 +2025,7 @@ public final class Bank {
     public static final int SNAPSHOT_ID_FIELD_NUMBER = 1;
     private int snapshotId_;
     /**
-     * <code>uint32 snapshot_id = 1;</code>
+     * <code>optional uint32 snapshot_id = 1;</code>
      */
     public int getSnapshotId() {
       return snapshotId_;
@@ -2108,7 +2046,6 @@ public final class Bank {
       if (snapshotId_ != 0) {
         output.writeUInt32(1, snapshotId_);
       }
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -2120,11 +2057,11 @@ public final class Bank {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, snapshotId_);
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -2138,7 +2075,6 @@ public final class Bank {
       boolean result = true;
       result = result && (getSnapshotId()
           == other.getSnapshotId());
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -2148,7 +2084,7 @@ public final class Bank {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + SNAPSHOT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSnapshotId();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -2156,17 +2092,6 @@ public final class Bank {
       return hash;
     }
 
-    public static Bank.InitSnapshot parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static Bank.InitSnapshot parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static Bank.InitSnapshot parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2314,7 +2239,7 @@ public final class Bank {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -2327,12 +2252,12 @@ public final class Bank {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2349,7 +2274,6 @@ public final class Bank {
         if (other.getSnapshotId() != 0) {
           setSnapshotId(other.getSnapshotId());
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -2378,13 +2302,13 @@ public final class Bank {
 
       private int snapshotId_ ;
       /**
-       * <code>uint32 snapshot_id = 1;</code>
+       * <code>optional uint32 snapshot_id = 1;</code>
        */
       public int getSnapshotId() {
         return snapshotId_;
       }
       /**
-       * <code>uint32 snapshot_id = 1;</code>
+       * <code>optional uint32 snapshot_id = 1;</code>
        */
       public Builder setSnapshotId(int value) {
         
@@ -2393,7 +2317,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>uint32 snapshot_id = 1;</code>
+       * <code>optional uint32 snapshot_id = 1;</code>
        */
       public Builder clearSnapshotId() {
         
@@ -2403,12 +2327,12 @@ public final class Bank {
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -2455,7 +2379,7 @@ public final class Bank {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 snapshot_id = 1;</code>
+     * <code>optional uint32 snapshot_id = 1;</code>
      */
     int getSnapshotId();
   }
@@ -2466,7 +2390,6 @@ public final class Bank {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:Marker)
       MarkerOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use Marker.newBuilder() to construct.
     private Marker(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2478,7 +2401,7 @@ public final class Bank {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private Marker(
         com.google.protobuf.CodedInputStream input,
@@ -2486,8 +2409,6 @@ public final class Bank {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -2497,8 +2418,7 @@ public final class Bank {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -2516,7 +2436,6 @@ public final class Bank {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -2535,7 +2454,7 @@ public final class Bank {
     public static final int SNAPSHOT_ID_FIELD_NUMBER = 1;
     private int snapshotId_;
     /**
-     * <code>uint32 snapshot_id = 1;</code>
+     * <code>optional uint32 snapshot_id = 1;</code>
      */
     public int getSnapshotId() {
       return snapshotId_;
@@ -2556,7 +2475,6 @@ public final class Bank {
       if (snapshotId_ != 0) {
         output.writeUInt32(1, snapshotId_);
       }
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -2568,11 +2486,11 @@ public final class Bank {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, snapshotId_);
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -2586,7 +2504,6 @@ public final class Bank {
       boolean result = true;
       result = result && (getSnapshotId()
           == other.getSnapshotId());
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -2596,7 +2513,7 @@ public final class Bank {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + SNAPSHOT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSnapshotId();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -2604,17 +2521,6 @@ public final class Bank {
       return hash;
     }
 
-    public static Bank.Marker parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static Bank.Marker parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static Bank.Marker parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -2762,7 +2668,7 @@ public final class Bank {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -2775,12 +2681,12 @@ public final class Bank {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -2797,7 +2703,6 @@ public final class Bank {
         if (other.getSnapshotId() != 0) {
           setSnapshotId(other.getSnapshotId());
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -2826,13 +2731,13 @@ public final class Bank {
 
       private int snapshotId_ ;
       /**
-       * <code>uint32 snapshot_id = 1;</code>
+       * <code>optional uint32 snapshot_id = 1;</code>
        */
       public int getSnapshotId() {
         return snapshotId_;
       }
       /**
-       * <code>uint32 snapshot_id = 1;</code>
+       * <code>optional uint32 snapshot_id = 1;</code>
        */
       public Builder setSnapshotId(int value) {
         
@@ -2841,7 +2746,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>uint32 snapshot_id = 1;</code>
+       * <code>optional uint32 snapshot_id = 1;</code>
        */
       public Builder clearSnapshotId() {
         
@@ -2851,12 +2756,12 @@ public final class Bank {
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -2903,7 +2808,7 @@ public final class Bank {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>uint32 snapshot_id = 1;</code>
+     * <code>optional uint32 snapshot_id = 1;</code>
      */
     int getSnapshotId();
   }
@@ -2914,7 +2819,6 @@ public final class Bank {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:RetrieveSnapshot)
       RetrieveSnapshotOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use RetrieveSnapshot.newBuilder() to construct.
     private RetrieveSnapshot(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -2926,7 +2830,7 @@ public final class Bank {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private RetrieveSnapshot(
         com.google.protobuf.CodedInputStream input,
@@ -2934,8 +2838,6 @@ public final class Bank {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -2945,8 +2847,7 @@ public final class Bank {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -2964,7 +2865,6 @@ public final class Bank {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -2983,7 +2883,7 @@ public final class Bank {
     public static final int SNAPSHOT_ID_FIELD_NUMBER = 1;
     private int snapshotId_;
     /**
-     * <code>uint32 snapshot_id = 1;</code>
+     * <code>optional uint32 snapshot_id = 1;</code>
      */
     public int getSnapshotId() {
       return snapshotId_;
@@ -3004,7 +2904,6 @@ public final class Bank {
       if (snapshotId_ != 0) {
         output.writeUInt32(1, snapshotId_);
       }
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -3016,11 +2915,11 @@ public final class Bank {
         size += com.google.protobuf.CodedOutputStream
           .computeUInt32Size(1, snapshotId_);
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -3034,7 +2933,6 @@ public final class Bank {
       boolean result = true;
       result = result && (getSnapshotId()
           == other.getSnapshotId());
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -3044,7 +2942,7 @@ public final class Bank {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       hash = (37 * hash) + SNAPSHOT_ID_FIELD_NUMBER;
       hash = (53 * hash) + getSnapshotId();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -3052,17 +2950,6 @@ public final class Bank {
       return hash;
     }
 
-    public static Bank.RetrieveSnapshot parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static Bank.RetrieveSnapshot parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static Bank.RetrieveSnapshot parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3210,7 +3097,7 @@ public final class Bank {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -3223,12 +3110,12 @@ public final class Bank {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -3245,7 +3132,6 @@ public final class Bank {
         if (other.getSnapshotId() != 0) {
           setSnapshotId(other.getSnapshotId());
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -3274,13 +3160,13 @@ public final class Bank {
 
       private int snapshotId_ ;
       /**
-       * <code>uint32 snapshot_id = 1;</code>
+       * <code>optional uint32 snapshot_id = 1;</code>
        */
       public int getSnapshotId() {
         return snapshotId_;
       }
       /**
-       * <code>uint32 snapshot_id = 1;</code>
+       * <code>optional uint32 snapshot_id = 1;</code>
        */
       public Builder setSnapshotId(int value) {
         
@@ -3289,7 +3175,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>uint32 snapshot_id = 1;</code>
+       * <code>optional uint32 snapshot_id = 1;</code>
        */
       public Builder clearSnapshotId() {
         
@@ -3299,12 +3185,12 @@ public final class Bank {
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -3351,15 +3237,15 @@ public final class Bank {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
+     * <code>optional .ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
      */
     boolean hasLocalSnapshot();
     /**
-     * <code>.ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
+     * <code>optional .ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
      */
     Bank.ReturnSnapshot.LocalSnapshot getLocalSnapshot();
     /**
-     * <code>.ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
+     * <code>optional .ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
      */
     Bank.ReturnSnapshot.LocalSnapshotOrBuilder getLocalSnapshotOrBuilder();
   }
@@ -3370,7 +3256,6 @@ public final class Bank {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:ReturnSnapshot)
       ReturnSnapshotOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use ReturnSnapshot.newBuilder() to construct.
     private ReturnSnapshot(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -3381,7 +3266,7 @@ public final class Bank {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private ReturnSnapshot(
         com.google.protobuf.CodedInputStream input,
@@ -3389,8 +3274,6 @@ public final class Bank {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -3400,8 +3283,7 @@ public final class Bank {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -3427,7 +3309,6 @@ public final class Bank {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -3448,12 +3329,12 @@ public final class Bank {
         com.google.protobuf.MessageOrBuilder {
 
       /**
-       * <code>uint32 snapshot_id = 1;</code>
+       * <code>optional uint32 snapshot_id = 1;</code>
        */
       int getSnapshotId();
 
       /**
-       * <code>uint32 balance = 2;</code>
+       * <code>optional uint32 balance = 2;</code>
        */
       int getBalance();
 
@@ -3477,7 +3358,6 @@ public final class Bank {
         com.google.protobuf.GeneratedMessageV3 implements
         // @@protoc_insertion_point(message_implements:ReturnSnapshot.LocalSnapshot)
         LocalSnapshotOrBuilder {
-    private static final long serialVersionUID = 0L;
       // Use LocalSnapshot.newBuilder() to construct.
       private LocalSnapshot(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
@@ -3491,7 +3371,7 @@ public final class Bank {
       @java.lang.Override
       public final com.google.protobuf.UnknownFieldSet
       getUnknownFields() {
-        return this.unknownFields;
+        return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
       }
       private LocalSnapshot(
           com.google.protobuf.CodedInputStream input,
@@ -3499,8 +3379,6 @@ public final class Bank {
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
         int mutable_bitField0_ = 0;
-        com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-            com.google.protobuf.UnknownFieldSet.newBuilder();
         try {
           boolean done = false;
           while (!done) {
@@ -3510,8 +3388,7 @@ public final class Bank {
                 done = true;
                 break;
               default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
+                if (!input.skipField(tag)) {
                   done = true;
                 }
                 break;
@@ -3558,7 +3435,6 @@ public final class Bank {
           if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
             channelState_ = java.util.Collections.unmodifiableList(channelState_);
           }
-          this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
         }
       }
@@ -3578,7 +3454,7 @@ public final class Bank {
       public static final int SNAPSHOT_ID_FIELD_NUMBER = 1;
       private int snapshotId_;
       /**
-       * <code>uint32 snapshot_id = 1;</code>
+       * <code>optional uint32 snapshot_id = 1;</code>
        */
       public int getSnapshotId() {
         return snapshotId_;
@@ -3587,7 +3463,7 @@ public final class Bank {
       public static final int BALANCE_FIELD_NUMBER = 2;
       private int balance_;
       /**
-       * <code>uint32 balance = 2;</code>
+       * <code>optional uint32 balance = 2;</code>
        */
       public int getBalance() {
         return balance_;
@@ -3642,7 +3518,6 @@ public final class Bank {
         for (int i = 0; i < channelState_.size(); i++) {
           output.writeUInt32NoTag(channelState_.get(i));
         }
-        unknownFields.writeTo(output);
       }
 
       public int getSerializedSize() {
@@ -3672,11 +3547,11 @@ public final class Bank {
           }
           channelStateMemoizedSerializedSize = dataSize;
         }
-        size += unknownFields.getSerializedSize();
         memoizedSize = size;
         return size;
       }
 
+      private static final long serialVersionUID = 0L;
       @java.lang.Override
       public boolean equals(final java.lang.Object obj) {
         if (obj == this) {
@@ -3694,7 +3569,6 @@ public final class Bank {
             == other.getBalance());
         result = result && getChannelStateList()
             .equals(other.getChannelStateList());
-        result = result && unknownFields.equals(other.unknownFields);
         return result;
       }
 
@@ -3704,7 +3578,7 @@ public final class Bank {
           return memoizedHashCode;
         }
         int hash = 41;
-        hash = (19 * hash) + getDescriptor().hashCode();
+        hash = (19 * hash) + getDescriptorForType().hashCode();
         hash = (37 * hash) + SNAPSHOT_ID_FIELD_NUMBER;
         hash = (53 * hash) + getSnapshotId();
         hash = (37 * hash) + BALANCE_FIELD_NUMBER;
@@ -3718,17 +3592,6 @@ public final class Bank {
         return hash;
       }
 
-      public static Bank.ReturnSnapshot.LocalSnapshot parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static Bank.ReturnSnapshot.LocalSnapshot parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
       public static Bank.ReturnSnapshot.LocalSnapshot parseFrom(
           com.google.protobuf.ByteString data)
           throws com.google.protobuf.InvalidProtocolBufferException {
@@ -3889,7 +3752,7 @@ public final class Bank {
         }
         public Builder setField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            Object value) {
           return (Builder) super.setField(field, value);
         }
         public Builder clearField(
@@ -3902,12 +3765,12 @@ public final class Bank {
         }
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
+            int index, Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
         public Builder addRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
         public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -3937,7 +3800,6 @@ public final class Bank {
             }
             onChanged();
           }
-          this.mergeUnknownFields(other.unknownFields);
           onChanged();
           return this;
         }
@@ -3967,13 +3829,13 @@ public final class Bank {
 
         private int snapshotId_ ;
         /**
-         * <code>uint32 snapshot_id = 1;</code>
+         * <code>optional uint32 snapshot_id = 1;</code>
          */
         public int getSnapshotId() {
           return snapshotId_;
         }
         /**
-         * <code>uint32 snapshot_id = 1;</code>
+         * <code>optional uint32 snapshot_id = 1;</code>
          */
         public Builder setSnapshotId(int value) {
           
@@ -3982,7 +3844,7 @@ public final class Bank {
           return this;
         }
         /**
-         * <code>uint32 snapshot_id = 1;</code>
+         * <code>optional uint32 snapshot_id = 1;</code>
          */
         public Builder clearSnapshotId() {
           
@@ -3993,13 +3855,13 @@ public final class Bank {
 
         private int balance_ ;
         /**
-         * <code>uint32 balance = 2;</code>
+         * <code>optional uint32 balance = 2;</code>
          */
         public int getBalance() {
           return balance_;
         }
         /**
-         * <code>uint32 balance = 2;</code>
+         * <code>optional uint32 balance = 2;</code>
          */
         public Builder setBalance(int value) {
           
@@ -4008,7 +3870,7 @@ public final class Bank {
           return this;
         }
         /**
-         * <code>uint32 balance = 2;</code>
+         * <code>optional uint32 balance = 2;</code>
          */
         public Builder clearBalance() {
           
@@ -4084,12 +3946,12 @@ public final class Bank {
         }
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.setUnknownFieldsProto3(unknownFields);
+          return this;
         }
 
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
-          return super.mergeUnknownFields(unknownFields);
+          return this;
         }
 
 
@@ -4134,19 +3996,19 @@ public final class Bank {
     public static final int LOCAL_SNAPSHOT_FIELD_NUMBER = 1;
     private Bank.ReturnSnapshot.LocalSnapshot localSnapshot_;
     /**
-     * <code>.ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
+     * <code>optional .ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
      */
     public boolean hasLocalSnapshot() {
       return localSnapshot_ != null;
     }
     /**
-     * <code>.ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
+     * <code>optional .ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
      */
     public Bank.ReturnSnapshot.LocalSnapshot getLocalSnapshot() {
       return localSnapshot_ == null ? Bank.ReturnSnapshot.LocalSnapshot.getDefaultInstance() : localSnapshot_;
     }
     /**
-     * <code>.ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
+     * <code>optional .ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
      */
     public Bank.ReturnSnapshot.LocalSnapshotOrBuilder getLocalSnapshotOrBuilder() {
       return getLocalSnapshot();
@@ -4167,7 +4029,6 @@ public final class Bank {
       if (localSnapshot_ != null) {
         output.writeMessage(1, getLocalSnapshot());
       }
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -4179,11 +4040,11 @@ public final class Bank {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(1, getLocalSnapshot());
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -4200,7 +4061,6 @@ public final class Bank {
         result = result && getLocalSnapshot()
             .equals(other.getLocalSnapshot());
       }
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -4210,7 +4070,7 @@ public final class Bank {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       if (hasLocalSnapshot()) {
         hash = (37 * hash) + LOCAL_SNAPSHOT_FIELD_NUMBER;
         hash = (53 * hash) + getLocalSnapshot().hashCode();
@@ -4220,17 +4080,6 @@ public final class Bank {
       return hash;
     }
 
-    public static Bank.ReturnSnapshot parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static Bank.ReturnSnapshot parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static Bank.ReturnSnapshot parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -4386,7 +4235,7 @@ public final class Bank {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -4399,12 +4248,12 @@ public final class Bank {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -4421,7 +4270,6 @@ public final class Bank {
         if (other.hasLocalSnapshot()) {
           mergeLocalSnapshot(other.getLocalSnapshot());
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -4452,13 +4300,13 @@ public final class Bank {
       private com.google.protobuf.SingleFieldBuilderV3<
           Bank.ReturnSnapshot.LocalSnapshot, Bank.ReturnSnapshot.LocalSnapshot.Builder, Bank.ReturnSnapshot.LocalSnapshotOrBuilder> localSnapshotBuilder_;
       /**
-       * <code>.ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
+       * <code>optional .ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
        */
       public boolean hasLocalSnapshot() {
         return localSnapshotBuilder_ != null || localSnapshot_ != null;
       }
       /**
-       * <code>.ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
+       * <code>optional .ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
        */
       public Bank.ReturnSnapshot.LocalSnapshot getLocalSnapshot() {
         if (localSnapshotBuilder_ == null) {
@@ -4468,7 +4316,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>.ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
+       * <code>optional .ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
        */
       public Builder setLocalSnapshot(Bank.ReturnSnapshot.LocalSnapshot value) {
         if (localSnapshotBuilder_ == null) {
@@ -4484,7 +4332,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
+       * <code>optional .ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
        */
       public Builder setLocalSnapshot(
           Bank.ReturnSnapshot.LocalSnapshot.Builder builderForValue) {
@@ -4498,7 +4346,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
+       * <code>optional .ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
        */
       public Builder mergeLocalSnapshot(Bank.ReturnSnapshot.LocalSnapshot value) {
         if (localSnapshotBuilder_ == null) {
@@ -4516,7 +4364,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
+       * <code>optional .ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
        */
       public Builder clearLocalSnapshot() {
         if (localSnapshotBuilder_ == null) {
@@ -4530,7 +4378,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
+       * <code>optional .ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
        */
       public Bank.ReturnSnapshot.LocalSnapshot.Builder getLocalSnapshotBuilder() {
         
@@ -4538,7 +4386,7 @@ public final class Bank {
         return getLocalSnapshotFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
+       * <code>optional .ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
        */
       public Bank.ReturnSnapshot.LocalSnapshotOrBuilder getLocalSnapshotOrBuilder() {
         if (localSnapshotBuilder_ != null) {
@@ -4549,7 +4397,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>.ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
+       * <code>optional .ReturnSnapshot.LocalSnapshot local_snapshot = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           Bank.ReturnSnapshot.LocalSnapshot, Bank.ReturnSnapshot.LocalSnapshot.Builder, Bank.ReturnSnapshot.LocalSnapshotOrBuilder> 
@@ -4566,12 +4414,12 @@ public final class Bank {
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
@@ -4618,80 +4466,56 @@ public final class Bank {
       com.google.protobuf.MessageOrBuilder {
 
     /**
-     * <code>.InitBranch init_branch = 1;</code>
-     */
-    boolean hasInitBranch();
-    /**
-     * <code>.InitBranch init_branch = 1;</code>
+     * <code>optional .InitBranch init_branch = 1;</code>
      */
     Bank.InitBranch getInitBranch();
     /**
-     * <code>.InitBranch init_branch = 1;</code>
+     * <code>optional .InitBranch init_branch = 1;</code>
      */
     Bank.InitBranchOrBuilder getInitBranchOrBuilder();
 
     /**
-     * <code>.Transfer transfer = 2;</code>
-     */
-    boolean hasTransfer();
-    /**
-     * <code>.Transfer transfer = 2;</code>
+     * <code>optional .Transfer transfer = 2;</code>
      */
     Bank.Transfer getTransfer();
     /**
-     * <code>.Transfer transfer = 2;</code>
+     * <code>optional .Transfer transfer = 2;</code>
      */
     Bank.TransferOrBuilder getTransferOrBuilder();
 
     /**
-     * <code>.InitSnapshot init_snapshot = 3;</code>
-     */
-    boolean hasInitSnapshot();
-    /**
-     * <code>.InitSnapshot init_snapshot = 3;</code>
+     * <code>optional .InitSnapshot init_snapshot = 3;</code>
      */
     Bank.InitSnapshot getInitSnapshot();
     /**
-     * <code>.InitSnapshot init_snapshot = 3;</code>
+     * <code>optional .InitSnapshot init_snapshot = 3;</code>
      */
     Bank.InitSnapshotOrBuilder getInitSnapshotOrBuilder();
 
     /**
-     * <code>.Marker marker = 4;</code>
-     */
-    boolean hasMarker();
-    /**
-     * <code>.Marker marker = 4;</code>
+     * <code>optional .Marker marker = 4;</code>
      */
     Bank.Marker getMarker();
     /**
-     * <code>.Marker marker = 4;</code>
+     * <code>optional .Marker marker = 4;</code>
      */
     Bank.MarkerOrBuilder getMarkerOrBuilder();
 
     /**
-     * <code>.RetrieveSnapshot retrieve_snapshot = 5;</code>
-     */
-    boolean hasRetrieveSnapshot();
-    /**
-     * <code>.RetrieveSnapshot retrieve_snapshot = 5;</code>
+     * <code>optional .RetrieveSnapshot retrieve_snapshot = 5;</code>
      */
     Bank.RetrieveSnapshot getRetrieveSnapshot();
     /**
-     * <code>.RetrieveSnapshot retrieve_snapshot = 5;</code>
+     * <code>optional .RetrieveSnapshot retrieve_snapshot = 5;</code>
      */
     Bank.RetrieveSnapshotOrBuilder getRetrieveSnapshotOrBuilder();
 
     /**
-     * <code>.ReturnSnapshot return_snapshot = 6;</code>
-     */
-    boolean hasReturnSnapshot();
-    /**
-     * <code>.ReturnSnapshot return_snapshot = 6;</code>
+     * <code>optional .ReturnSnapshot return_snapshot = 6;</code>
      */
     Bank.ReturnSnapshot getReturnSnapshot();
     /**
-     * <code>.ReturnSnapshot return_snapshot = 6;</code>
+     * <code>optional .ReturnSnapshot return_snapshot = 6;</code>
      */
     Bank.ReturnSnapshotOrBuilder getReturnSnapshotOrBuilder();
 
@@ -4704,7 +4528,6 @@ public final class Bank {
       com.google.protobuf.GeneratedMessageV3 implements
       // @@protoc_insertion_point(message_implements:BranchMessage)
       BranchMessageOrBuilder {
-  private static final long serialVersionUID = 0L;
     // Use BranchMessage.newBuilder() to construct.
     private BranchMessage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
@@ -4715,7 +4538,7 @@ public final class Bank {
     @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
-      return this.unknownFields;
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
     private BranchMessage(
         com.google.protobuf.CodedInputStream input,
@@ -4723,8 +4546,6 @@ public final class Bank {
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
       int mutable_bitField0_ = 0;
-      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
-          com.google.protobuf.UnknownFieldSet.newBuilder();
       try {
         boolean done = false;
         while (!done) {
@@ -4734,8 +4555,7 @@ public final class Bank {
               done = true;
               break;
             default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
+              if (!input.skipField(tag)) {
                 done = true;
               }
               break;
@@ -4832,7 +4652,6 @@ public final class Bank {
         throw new com.google.protobuf.InvalidProtocolBufferException(
             e).setUnfinishedMessage(this);
       } finally {
-        this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
@@ -4896,13 +4715,7 @@ public final class Bank {
 
     public static final int INIT_BRANCH_FIELD_NUMBER = 1;
     /**
-     * <code>.InitBranch init_branch = 1;</code>
-     */
-    public boolean hasInitBranch() {
-      return branchMessageCase_ == 1;
-    }
-    /**
-     * <code>.InitBranch init_branch = 1;</code>
+     * <code>optional .InitBranch init_branch = 1;</code>
      */
     public Bank.InitBranch getInitBranch() {
       if (branchMessageCase_ == 1) {
@@ -4911,7 +4724,7 @@ public final class Bank {
       return Bank.InitBranch.getDefaultInstance();
     }
     /**
-     * <code>.InitBranch init_branch = 1;</code>
+     * <code>optional .InitBranch init_branch = 1;</code>
      */
     public Bank.InitBranchOrBuilder getInitBranchOrBuilder() {
       if (branchMessageCase_ == 1) {
@@ -4922,13 +4735,7 @@ public final class Bank {
 
     public static final int TRANSFER_FIELD_NUMBER = 2;
     /**
-     * <code>.Transfer transfer = 2;</code>
-     */
-    public boolean hasTransfer() {
-      return branchMessageCase_ == 2;
-    }
-    /**
-     * <code>.Transfer transfer = 2;</code>
+     * <code>optional .Transfer transfer = 2;</code>
      */
     public Bank.Transfer getTransfer() {
       if (branchMessageCase_ == 2) {
@@ -4937,7 +4744,7 @@ public final class Bank {
       return Bank.Transfer.getDefaultInstance();
     }
     /**
-     * <code>.Transfer transfer = 2;</code>
+     * <code>optional .Transfer transfer = 2;</code>
      */
     public Bank.TransferOrBuilder getTransferOrBuilder() {
       if (branchMessageCase_ == 2) {
@@ -4948,13 +4755,7 @@ public final class Bank {
 
     public static final int INIT_SNAPSHOT_FIELD_NUMBER = 3;
     /**
-     * <code>.InitSnapshot init_snapshot = 3;</code>
-     */
-    public boolean hasInitSnapshot() {
-      return branchMessageCase_ == 3;
-    }
-    /**
-     * <code>.InitSnapshot init_snapshot = 3;</code>
+     * <code>optional .InitSnapshot init_snapshot = 3;</code>
      */
     public Bank.InitSnapshot getInitSnapshot() {
       if (branchMessageCase_ == 3) {
@@ -4963,7 +4764,7 @@ public final class Bank {
       return Bank.InitSnapshot.getDefaultInstance();
     }
     /**
-     * <code>.InitSnapshot init_snapshot = 3;</code>
+     * <code>optional .InitSnapshot init_snapshot = 3;</code>
      */
     public Bank.InitSnapshotOrBuilder getInitSnapshotOrBuilder() {
       if (branchMessageCase_ == 3) {
@@ -4974,13 +4775,7 @@ public final class Bank {
 
     public static final int MARKER_FIELD_NUMBER = 4;
     /**
-     * <code>.Marker marker = 4;</code>
-     */
-    public boolean hasMarker() {
-      return branchMessageCase_ == 4;
-    }
-    /**
-     * <code>.Marker marker = 4;</code>
+     * <code>optional .Marker marker = 4;</code>
      */
     public Bank.Marker getMarker() {
       if (branchMessageCase_ == 4) {
@@ -4989,7 +4784,7 @@ public final class Bank {
       return Bank.Marker.getDefaultInstance();
     }
     /**
-     * <code>.Marker marker = 4;</code>
+     * <code>optional .Marker marker = 4;</code>
      */
     public Bank.MarkerOrBuilder getMarkerOrBuilder() {
       if (branchMessageCase_ == 4) {
@@ -5000,13 +4795,7 @@ public final class Bank {
 
     public static final int RETRIEVE_SNAPSHOT_FIELD_NUMBER = 5;
     /**
-     * <code>.RetrieveSnapshot retrieve_snapshot = 5;</code>
-     */
-    public boolean hasRetrieveSnapshot() {
-      return branchMessageCase_ == 5;
-    }
-    /**
-     * <code>.RetrieveSnapshot retrieve_snapshot = 5;</code>
+     * <code>optional .RetrieveSnapshot retrieve_snapshot = 5;</code>
      */
     public Bank.RetrieveSnapshot getRetrieveSnapshot() {
       if (branchMessageCase_ == 5) {
@@ -5015,7 +4804,7 @@ public final class Bank {
       return Bank.RetrieveSnapshot.getDefaultInstance();
     }
     /**
-     * <code>.RetrieveSnapshot retrieve_snapshot = 5;</code>
+     * <code>optional .RetrieveSnapshot retrieve_snapshot = 5;</code>
      */
     public Bank.RetrieveSnapshotOrBuilder getRetrieveSnapshotOrBuilder() {
       if (branchMessageCase_ == 5) {
@@ -5026,13 +4815,7 @@ public final class Bank {
 
     public static final int RETURN_SNAPSHOT_FIELD_NUMBER = 6;
     /**
-     * <code>.ReturnSnapshot return_snapshot = 6;</code>
-     */
-    public boolean hasReturnSnapshot() {
-      return branchMessageCase_ == 6;
-    }
-    /**
-     * <code>.ReturnSnapshot return_snapshot = 6;</code>
+     * <code>optional .ReturnSnapshot return_snapshot = 6;</code>
      */
     public Bank.ReturnSnapshot getReturnSnapshot() {
       if (branchMessageCase_ == 6) {
@@ -5041,7 +4824,7 @@ public final class Bank {
       return Bank.ReturnSnapshot.getDefaultInstance();
     }
     /**
-     * <code>.ReturnSnapshot return_snapshot = 6;</code>
+     * <code>optional .ReturnSnapshot return_snapshot = 6;</code>
      */
     public Bank.ReturnSnapshotOrBuilder getReturnSnapshotOrBuilder() {
       if (branchMessageCase_ == 6) {
@@ -5080,7 +4863,6 @@ public final class Bank {
       if (branchMessageCase_ == 6) {
         output.writeMessage(6, (Bank.ReturnSnapshot) branchMessage_);
       }
-      unknownFields.writeTo(output);
     }
 
     public int getSerializedSize() {
@@ -5112,11 +4894,11 @@ public final class Bank {
         size += com.google.protobuf.CodedOutputStream
           .computeMessageSize(6, (Bank.ReturnSnapshot) branchMessage_);
       }
-      size += unknownFields.getSerializedSize();
       memoizedSize = size;
       return size;
     }
 
+    private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
@@ -5159,7 +4941,6 @@ public final class Bank {
         case 0:
         default:
       }
-      result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
 
@@ -5169,7 +4950,7 @@ public final class Bank {
         return memoizedHashCode;
       }
       int hash = 41;
-      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (19 * hash) + getDescriptorForType().hashCode();
       switch (branchMessageCase_) {
         case 1:
           hash = (37 * hash) + INIT_BRANCH_FIELD_NUMBER;
@@ -5203,17 +4984,6 @@ public final class Bank {
       return hash;
     }
 
-    public static Bank.BranchMessage parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data);
-    }
-    public static Bank.BranchMessage parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return PARSER.parseFrom(data, extensionRegistry);
-    }
     public static Bank.BranchMessage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
@@ -5403,7 +5173,7 @@ public final class Bank {
       }
       public Builder setField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.setField(field, value);
       }
       public Builder clearField(
@@ -5416,12 +5186,12 @@ public final class Bank {
       }
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index, Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
       public Builder addRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
       public Builder mergeFrom(com.google.protobuf.Message other) {
@@ -5464,7 +5234,6 @@ public final class Bank {
             break;
           }
         }
-        this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
@@ -5509,13 +5278,7 @@ public final class Bank {
       private com.google.protobuf.SingleFieldBuilderV3<
           Bank.InitBranch, Bank.InitBranch.Builder, Bank.InitBranchOrBuilder> initBranchBuilder_;
       /**
-       * <code>.InitBranch init_branch = 1;</code>
-       */
-      public boolean hasInitBranch() {
-        return branchMessageCase_ == 1;
-      }
-      /**
-       * <code>.InitBranch init_branch = 1;</code>
+       * <code>optional .InitBranch init_branch = 1;</code>
        */
       public Bank.InitBranch getInitBranch() {
         if (initBranchBuilder_ == null) {
@@ -5531,7 +5294,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>.InitBranch init_branch = 1;</code>
+       * <code>optional .InitBranch init_branch = 1;</code>
        */
       public Builder setInitBranch(Bank.InitBranch value) {
         if (initBranchBuilder_ == null) {
@@ -5547,7 +5310,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.InitBranch init_branch = 1;</code>
+       * <code>optional .InitBranch init_branch = 1;</code>
        */
       public Builder setInitBranch(
           Bank.InitBranch.Builder builderForValue) {
@@ -5561,7 +5324,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.InitBranch init_branch = 1;</code>
+       * <code>optional .InitBranch init_branch = 1;</code>
        */
       public Builder mergeInitBranch(Bank.InitBranch value) {
         if (initBranchBuilder_ == null) {
@@ -5583,7 +5346,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.InitBranch init_branch = 1;</code>
+       * <code>optional .InitBranch init_branch = 1;</code>
        */
       public Builder clearInitBranch() {
         if (initBranchBuilder_ == null) {
@@ -5602,13 +5365,13 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.InitBranch init_branch = 1;</code>
+       * <code>optional .InitBranch init_branch = 1;</code>
        */
       public Bank.InitBranch.Builder getInitBranchBuilder() {
         return getInitBranchFieldBuilder().getBuilder();
       }
       /**
-       * <code>.InitBranch init_branch = 1;</code>
+       * <code>optional .InitBranch init_branch = 1;</code>
        */
       public Bank.InitBranchOrBuilder getInitBranchOrBuilder() {
         if ((branchMessageCase_ == 1) && (initBranchBuilder_ != null)) {
@@ -5621,7 +5384,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>.InitBranch init_branch = 1;</code>
+       * <code>optional .InitBranch init_branch = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           Bank.InitBranch, Bank.InitBranch.Builder, Bank.InitBranchOrBuilder> 
@@ -5645,13 +5408,7 @@ public final class Bank {
       private com.google.protobuf.SingleFieldBuilderV3<
           Bank.Transfer, Bank.Transfer.Builder, Bank.TransferOrBuilder> transferBuilder_;
       /**
-       * <code>.Transfer transfer = 2;</code>
-       */
-      public boolean hasTransfer() {
-        return branchMessageCase_ == 2;
-      }
-      /**
-       * <code>.Transfer transfer = 2;</code>
+       * <code>optional .Transfer transfer = 2;</code>
        */
       public Bank.Transfer getTransfer() {
         if (transferBuilder_ == null) {
@@ -5667,7 +5424,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>.Transfer transfer = 2;</code>
+       * <code>optional .Transfer transfer = 2;</code>
        */
       public Builder setTransfer(Bank.Transfer value) {
         if (transferBuilder_ == null) {
@@ -5683,7 +5440,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.Transfer transfer = 2;</code>
+       * <code>optional .Transfer transfer = 2;</code>
        */
       public Builder setTransfer(
           Bank.Transfer.Builder builderForValue) {
@@ -5697,7 +5454,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.Transfer transfer = 2;</code>
+       * <code>optional .Transfer transfer = 2;</code>
        */
       public Builder mergeTransfer(Bank.Transfer value) {
         if (transferBuilder_ == null) {
@@ -5719,7 +5476,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.Transfer transfer = 2;</code>
+       * <code>optional .Transfer transfer = 2;</code>
        */
       public Builder clearTransfer() {
         if (transferBuilder_ == null) {
@@ -5738,13 +5495,13 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.Transfer transfer = 2;</code>
+       * <code>optional .Transfer transfer = 2;</code>
        */
       public Bank.Transfer.Builder getTransferBuilder() {
         return getTransferFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Transfer transfer = 2;</code>
+       * <code>optional .Transfer transfer = 2;</code>
        */
       public Bank.TransferOrBuilder getTransferOrBuilder() {
         if ((branchMessageCase_ == 2) && (transferBuilder_ != null)) {
@@ -5757,7 +5514,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>.Transfer transfer = 2;</code>
+       * <code>optional .Transfer transfer = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           Bank.Transfer, Bank.Transfer.Builder, Bank.TransferOrBuilder> 
@@ -5781,13 +5538,7 @@ public final class Bank {
       private com.google.protobuf.SingleFieldBuilderV3<
           Bank.InitSnapshot, Bank.InitSnapshot.Builder, Bank.InitSnapshotOrBuilder> initSnapshotBuilder_;
       /**
-       * <code>.InitSnapshot init_snapshot = 3;</code>
-       */
-      public boolean hasInitSnapshot() {
-        return branchMessageCase_ == 3;
-      }
-      /**
-       * <code>.InitSnapshot init_snapshot = 3;</code>
+       * <code>optional .InitSnapshot init_snapshot = 3;</code>
        */
       public Bank.InitSnapshot getInitSnapshot() {
         if (initSnapshotBuilder_ == null) {
@@ -5803,7 +5554,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>.InitSnapshot init_snapshot = 3;</code>
+       * <code>optional .InitSnapshot init_snapshot = 3;</code>
        */
       public Builder setInitSnapshot(Bank.InitSnapshot value) {
         if (initSnapshotBuilder_ == null) {
@@ -5819,7 +5570,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.InitSnapshot init_snapshot = 3;</code>
+       * <code>optional .InitSnapshot init_snapshot = 3;</code>
        */
       public Builder setInitSnapshot(
           Bank.InitSnapshot.Builder builderForValue) {
@@ -5833,7 +5584,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.InitSnapshot init_snapshot = 3;</code>
+       * <code>optional .InitSnapshot init_snapshot = 3;</code>
        */
       public Builder mergeInitSnapshot(Bank.InitSnapshot value) {
         if (initSnapshotBuilder_ == null) {
@@ -5855,7 +5606,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.InitSnapshot init_snapshot = 3;</code>
+       * <code>optional .InitSnapshot init_snapshot = 3;</code>
        */
       public Builder clearInitSnapshot() {
         if (initSnapshotBuilder_ == null) {
@@ -5874,13 +5625,13 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.InitSnapshot init_snapshot = 3;</code>
+       * <code>optional .InitSnapshot init_snapshot = 3;</code>
        */
       public Bank.InitSnapshot.Builder getInitSnapshotBuilder() {
         return getInitSnapshotFieldBuilder().getBuilder();
       }
       /**
-       * <code>.InitSnapshot init_snapshot = 3;</code>
+       * <code>optional .InitSnapshot init_snapshot = 3;</code>
        */
       public Bank.InitSnapshotOrBuilder getInitSnapshotOrBuilder() {
         if ((branchMessageCase_ == 3) && (initSnapshotBuilder_ != null)) {
@@ -5893,7 +5644,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>.InitSnapshot init_snapshot = 3;</code>
+       * <code>optional .InitSnapshot init_snapshot = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           Bank.InitSnapshot, Bank.InitSnapshot.Builder, Bank.InitSnapshotOrBuilder> 
@@ -5917,13 +5668,7 @@ public final class Bank {
       private com.google.protobuf.SingleFieldBuilderV3<
           Bank.Marker, Bank.Marker.Builder, Bank.MarkerOrBuilder> markerBuilder_;
       /**
-       * <code>.Marker marker = 4;</code>
-       */
-      public boolean hasMarker() {
-        return branchMessageCase_ == 4;
-      }
-      /**
-       * <code>.Marker marker = 4;</code>
+       * <code>optional .Marker marker = 4;</code>
        */
       public Bank.Marker getMarker() {
         if (markerBuilder_ == null) {
@@ -5939,7 +5684,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>.Marker marker = 4;</code>
+       * <code>optional .Marker marker = 4;</code>
        */
       public Builder setMarker(Bank.Marker value) {
         if (markerBuilder_ == null) {
@@ -5955,7 +5700,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.Marker marker = 4;</code>
+       * <code>optional .Marker marker = 4;</code>
        */
       public Builder setMarker(
           Bank.Marker.Builder builderForValue) {
@@ -5969,7 +5714,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.Marker marker = 4;</code>
+       * <code>optional .Marker marker = 4;</code>
        */
       public Builder mergeMarker(Bank.Marker value) {
         if (markerBuilder_ == null) {
@@ -5991,7 +5736,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.Marker marker = 4;</code>
+       * <code>optional .Marker marker = 4;</code>
        */
       public Builder clearMarker() {
         if (markerBuilder_ == null) {
@@ -6010,13 +5755,13 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.Marker marker = 4;</code>
+       * <code>optional .Marker marker = 4;</code>
        */
       public Bank.Marker.Builder getMarkerBuilder() {
         return getMarkerFieldBuilder().getBuilder();
       }
       /**
-       * <code>.Marker marker = 4;</code>
+       * <code>optional .Marker marker = 4;</code>
        */
       public Bank.MarkerOrBuilder getMarkerOrBuilder() {
         if ((branchMessageCase_ == 4) && (markerBuilder_ != null)) {
@@ -6029,7 +5774,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>.Marker marker = 4;</code>
+       * <code>optional .Marker marker = 4;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           Bank.Marker, Bank.Marker.Builder, Bank.MarkerOrBuilder> 
@@ -6053,13 +5798,7 @@ public final class Bank {
       private com.google.protobuf.SingleFieldBuilderV3<
           Bank.RetrieveSnapshot, Bank.RetrieveSnapshot.Builder, Bank.RetrieveSnapshotOrBuilder> retrieveSnapshotBuilder_;
       /**
-       * <code>.RetrieveSnapshot retrieve_snapshot = 5;</code>
-       */
-      public boolean hasRetrieveSnapshot() {
-        return branchMessageCase_ == 5;
-      }
-      /**
-       * <code>.RetrieveSnapshot retrieve_snapshot = 5;</code>
+       * <code>optional .RetrieveSnapshot retrieve_snapshot = 5;</code>
        */
       public Bank.RetrieveSnapshot getRetrieveSnapshot() {
         if (retrieveSnapshotBuilder_ == null) {
@@ -6075,7 +5814,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>.RetrieveSnapshot retrieve_snapshot = 5;</code>
+       * <code>optional .RetrieveSnapshot retrieve_snapshot = 5;</code>
        */
       public Builder setRetrieveSnapshot(Bank.RetrieveSnapshot value) {
         if (retrieveSnapshotBuilder_ == null) {
@@ -6091,7 +5830,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.RetrieveSnapshot retrieve_snapshot = 5;</code>
+       * <code>optional .RetrieveSnapshot retrieve_snapshot = 5;</code>
        */
       public Builder setRetrieveSnapshot(
           Bank.RetrieveSnapshot.Builder builderForValue) {
@@ -6105,7 +5844,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.RetrieveSnapshot retrieve_snapshot = 5;</code>
+       * <code>optional .RetrieveSnapshot retrieve_snapshot = 5;</code>
        */
       public Builder mergeRetrieveSnapshot(Bank.RetrieveSnapshot value) {
         if (retrieveSnapshotBuilder_ == null) {
@@ -6127,7 +5866,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.RetrieveSnapshot retrieve_snapshot = 5;</code>
+       * <code>optional .RetrieveSnapshot retrieve_snapshot = 5;</code>
        */
       public Builder clearRetrieveSnapshot() {
         if (retrieveSnapshotBuilder_ == null) {
@@ -6146,13 +5885,13 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.RetrieveSnapshot retrieve_snapshot = 5;</code>
+       * <code>optional .RetrieveSnapshot retrieve_snapshot = 5;</code>
        */
       public Bank.RetrieveSnapshot.Builder getRetrieveSnapshotBuilder() {
         return getRetrieveSnapshotFieldBuilder().getBuilder();
       }
       /**
-       * <code>.RetrieveSnapshot retrieve_snapshot = 5;</code>
+       * <code>optional .RetrieveSnapshot retrieve_snapshot = 5;</code>
        */
       public Bank.RetrieveSnapshotOrBuilder getRetrieveSnapshotOrBuilder() {
         if ((branchMessageCase_ == 5) && (retrieveSnapshotBuilder_ != null)) {
@@ -6165,7 +5904,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>.RetrieveSnapshot retrieve_snapshot = 5;</code>
+       * <code>optional .RetrieveSnapshot retrieve_snapshot = 5;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           Bank.RetrieveSnapshot, Bank.RetrieveSnapshot.Builder, Bank.RetrieveSnapshotOrBuilder> 
@@ -6189,13 +5928,7 @@ public final class Bank {
       private com.google.protobuf.SingleFieldBuilderV3<
           Bank.ReturnSnapshot, Bank.ReturnSnapshot.Builder, Bank.ReturnSnapshotOrBuilder> returnSnapshotBuilder_;
       /**
-       * <code>.ReturnSnapshot return_snapshot = 6;</code>
-       */
-      public boolean hasReturnSnapshot() {
-        return branchMessageCase_ == 6;
-      }
-      /**
-       * <code>.ReturnSnapshot return_snapshot = 6;</code>
+       * <code>optional .ReturnSnapshot return_snapshot = 6;</code>
        */
       public Bank.ReturnSnapshot getReturnSnapshot() {
         if (returnSnapshotBuilder_ == null) {
@@ -6211,7 +5944,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>.ReturnSnapshot return_snapshot = 6;</code>
+       * <code>optional .ReturnSnapshot return_snapshot = 6;</code>
        */
       public Builder setReturnSnapshot(Bank.ReturnSnapshot value) {
         if (returnSnapshotBuilder_ == null) {
@@ -6227,7 +5960,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.ReturnSnapshot return_snapshot = 6;</code>
+       * <code>optional .ReturnSnapshot return_snapshot = 6;</code>
        */
       public Builder setReturnSnapshot(
           Bank.ReturnSnapshot.Builder builderForValue) {
@@ -6241,7 +5974,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.ReturnSnapshot return_snapshot = 6;</code>
+       * <code>optional .ReturnSnapshot return_snapshot = 6;</code>
        */
       public Builder mergeReturnSnapshot(Bank.ReturnSnapshot value) {
         if (returnSnapshotBuilder_ == null) {
@@ -6263,7 +5996,7 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.ReturnSnapshot return_snapshot = 6;</code>
+       * <code>optional .ReturnSnapshot return_snapshot = 6;</code>
        */
       public Builder clearReturnSnapshot() {
         if (returnSnapshotBuilder_ == null) {
@@ -6282,13 +6015,13 @@ public final class Bank {
         return this;
       }
       /**
-       * <code>.ReturnSnapshot return_snapshot = 6;</code>
+       * <code>optional .ReturnSnapshot return_snapshot = 6;</code>
        */
       public Bank.ReturnSnapshot.Builder getReturnSnapshotBuilder() {
         return getReturnSnapshotFieldBuilder().getBuilder();
       }
       /**
-       * <code>.ReturnSnapshot return_snapshot = 6;</code>
+       * <code>optional .ReturnSnapshot return_snapshot = 6;</code>
        */
       public Bank.ReturnSnapshotOrBuilder getReturnSnapshotOrBuilder() {
         if ((branchMessageCase_ == 6) && (returnSnapshotBuilder_ != null)) {
@@ -6301,7 +6034,7 @@ public final class Bank {
         }
       }
       /**
-       * <code>.ReturnSnapshot return_snapshot = 6;</code>
+       * <code>optional .ReturnSnapshot return_snapshot = 6;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
           Bank.ReturnSnapshot, Bank.ReturnSnapshot.Builder, Bank.ReturnSnapshotOrBuilder> 
@@ -6323,12 +6056,12 @@ public final class Bank {
       }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.setUnknownFieldsProto3(unknownFields);
+        return this;
       }
 
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
-        return super.mergeUnknownFields(unknownFields);
+        return this;
       }
 
 
