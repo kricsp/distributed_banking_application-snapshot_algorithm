@@ -2,17 +2,13 @@
 
 Programming language - Java
 
-Note: Bank.Java should be placed inside the /src folder
-      makefile does not give execute permissions to the controller and branch script.
-      branch.txt file containing should be in the same directory as makefile.
-
 To compile: -same directory as makefile
 
-		make
+  make
 
 To clean:
 
-		make clean
+  make clean
 
 To Run:
 
@@ -20,7 +16,12 @@ To Run:
 	./controller 4000 {branch.txt}
 
 	chmod +x branch.sh
-	./branch.sh branch1 9090		
+	./branch.sh branch1 9090
+
+Note:
+  Bank.Java should be placed inside the /src folder
+  makefile does not give execute permissions to the controller and branch script.
+  branch.txt file containing should be in the same directory as makefile.	
 
 Implementation Details
 
