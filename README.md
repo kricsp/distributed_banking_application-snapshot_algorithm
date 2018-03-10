@@ -2,15 +2,15 @@
 
 Programming language - Java
 
-To compile: -same directory as makefile
+#To compile: -same directory as makefile
 
   make
 
-To clean:
+#To clean:
 
   make clean
 
-To Run:
+#To Run:
 
 	chmod +x controller.sh
 	./controller 4000 {branch.txt}
@@ -18,11 +18,11 @@ To Run:
 	chmod +x branch.sh
 	./branch.sh branch1 9090
 
-Note:
+#Note:
   Bank.Java should be placed inside the /src folder
   makefile does not give execute permissions to the controller and branch script.
-  branch.txt file containing should be in the same directory as makefile.	
+  branch.txt file containing should be in the same directory as makefile.
 
-Implementation Details
+##Implementation Details
 
   The controller class reads the file and sends out the init branch message. When a branch receives the init branch message, it starts a thread controlhandle() that handles the messages like initSnapShot and retreiveSnapShot messages. Then, the branch sents out connection request with its name as string message to all the other branches whose name is greater than the branch sending the connection request.When a branch receives a connection request, it starts a thread with the socket and branch name it received from to handle connection between those two branches. Likewise, for every other branch. These threads handle the transfer and marker messages. The branchContext class records all the information - balance Snapshot details and incoming channel states. The Branch class maintains a hashmap and records the snapshot object with snapshot id as key. The snapshot object has n-1 channelState objects that handles the incoming channel states for each snapshotId. Since, Each incoming channel runs in a thread which has shared access to the branch class(main), it can record the messages if it follows the marker receiver rule.  
