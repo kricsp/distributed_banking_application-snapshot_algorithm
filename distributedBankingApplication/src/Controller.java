@@ -84,21 +84,21 @@ public class Controller{
 			}
 		}
 		try {
-			Thread.sleep(10000);
+			Thread.sleep(5000);
 		} catch (InterruptedException e2) {
 			// TODO Auto-generated catch block
 			e2.printStackTrace();
 		}
 		
 		Map<String, Socket> treeMap = new TreeMap<String, Socket>(socklist);
-		
+/*		
 		try {
 			Thread.sleep(4000);
 		} catch (InterruptedException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		
+*/		
 		
 		Thread snap = new Thread(new Runnable() {
 						
@@ -106,7 +106,7 @@ public class Controller{
 				
 				while(true) {
 							try {
-								Thread.sleep(3000);
+								Thread.sleep(1000);
 							} catch (InterruptedException e1) {
 								e1.printStackTrace();
 							}
@@ -142,7 +142,7 @@ public class Controller{
 			
 		while(true) {			
 			try {
-				Thread.sleep(5000);
+				Thread.sleep(2500);
 			} catch (InterruptedException e1) {
 				e1.printStackTrace();
 			}
@@ -189,7 +189,7 @@ public class Controller{
 			getSnapShot++;
 			if(getSnapShot > InitiatedSnaps.size()) {
 				try {
-					Thread.sleep(8000);
+					Thread.sleep(4000);
 				} catch (InterruptedException e) {
 					e.printStackTrace();
 				}
