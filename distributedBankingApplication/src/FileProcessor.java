@@ -30,7 +30,7 @@ public class FileProcessor{
 
 	/**
 	* Reads target file and returns line by line
- 	* @return line	
+ 	* @return line current line in the file pointed by file descriptor
 	*/
 
 	public String readLine(){
