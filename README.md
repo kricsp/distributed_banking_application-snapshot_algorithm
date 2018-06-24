@@ -112,10 +112,12 @@ The recording part of a single instance of the algorithm requires O(e) messages 
 
 The Controller is fully automated. It periodically sends the _InitSnapshot_ message with monotonically increasing _snapshot_id_ on a randomly selected branch and outputs to the console the aggregated global snapshot retrieved from all branches in the correct format. In addition, the snapshot taken by branches needs to be identiﬁed by their names: e.g., “branch1” to represent branch1’s local state, and “branch2->branch1” to represent the channel state. Here is an example controller output:  
 
-_snapshot_id: 10_  
-_branch1: 1000, branch2->branch1: 10, branch3->branch1: 0_  
-_branch2: 1000, branch1->branch2: 0, branch3->branch2: 15_
-_branch3: 960, branch->branch3: 15, branch2->branch3: 0_  
+```console
+snapshot_id: 10  
+branch1: 1000, branch2->branch1: 10, branch3->branch1: 0
+branch2: 1000, branch1->branch2: 0, branch3->branch2: 15
+branch3: 960, branch->branch3: 15, branch2->branch3: 0
+```
 
 **Protocol Buffer**  
 _bank.proto_ file defines the messages to be transmitted among processes in the protocol buffer. I have included the proto generated file _bank.java_ in the \src folder. If you want to manually compile the proto file, you can use the protocol compiler, __PROTOC__, to compile and use the auto-generated code for marshalling and unmarshalling messages.  
