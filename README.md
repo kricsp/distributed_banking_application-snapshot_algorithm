@@ -1,6 +1,6 @@
 # Distributed Banking Application - Global Snapshot Algorithm
 
-An Distributed Banking Application that transfers money to a randomly selected branch at unpredictable times.
+A Distributed Banking Application that transfers money to a randomly selected branch at unpredictable times.
 
 ## Prerequisites
 
@@ -51,8 +51,7 @@ In a distributed bank, a global snapshot contains both the local state of each b
 
 ## Chandy-Lamport Algorithm
 
-### Initiate the Snapshot
-
+**Initiating the Snapshot**  
 - **P<sub>i** initiates the snapshot by first recording its own local state  
 - **for** j=1 to N except i  
   - **P<sub>i** sends out a _Marker_ Message on outgoing channel **C<sub>ij**  
